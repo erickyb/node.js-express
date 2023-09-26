@@ -2,8 +2,13 @@ const express = require('express');
 const routerApi = require('./routes/index');
 const cors = require('cors');
 const app = express();
-const generador = require('../modules/Generador');
+const generador = require('../modules/generador');
 const {longError,errorHandler}=require('./middlewares/error.handler');
+const {createTareaSchema,
+  updateTareaSchema,
+  getTareaSchema} = require('../schemas/tarea.schema');
+const validatorHandler = require('../middlewares/validator.handler');
+
 
 const port = process.env.PORT || 3000;
 
@@ -34,4 +39,16 @@ const options = {
 app.use(cors());
 
 routerApi(app);
+
+
+router.post('/',
+validatorHandler(createTareaSchema,'body'),
+async (req, res) => {
+  const body = req.body;
+  const Newtarea = await service.create(body);
+  res.json({
+    message: 'created',
+    data: Newtarea
+  });
+});
 
