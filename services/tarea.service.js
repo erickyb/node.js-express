@@ -1,13 +1,14 @@
-const generadorDeDatos = require('../modules/generador');
+//const generadorDeDatos = require('../modules/generador');
 const express=require('express');
 const router = express.Router();
-class ProductoService{
+
+class TareaService{
  constructor(){
     this.productos=[];
  }
-    async create(){}
-    async find(){
+    async create(producto){}
 
+    async find(){
         return new Promise((resolve,reject)=>{
             setTimeout(()=>{
                 resolve(this.productos);
@@ -19,16 +20,10 @@ class ProductoService{
     async delete(id){}
     
 };
-router.get('/:id',async (req,res,next)=>{
-    try{
-        const{id}=req.params;
-        const producto=await service.findOne(id);
-        res.json(producto);
-    }catch(err){
-        next(err);
-    }
-});
-module.exports={ProductoService,router}  ;
+//module.exports={TareaService,router};
+
+module.exports=TareaService;
+
 
 
 

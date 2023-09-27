@@ -9,14 +9,12 @@ const {longError,errorHandler} = require('./middlewares/error.handler');
 const validatorHandler = require('./middlewares/validator.handler');
 
 
-const port = process.env.PORT || 3025;
+const port = process.env.PORT || 3000;
 
-//app.listen(port, ()=>{
-  //  console.log('Mi port'+port);
-  //});
+
 
 app.listen(port, ()=>{
-    console.log('Mi port'+port);
+    console.log('Mi puerto Erick '+port);
   });
 
 app.use(longError);
