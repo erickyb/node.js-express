@@ -5,7 +5,7 @@ const  generador = require('../modules/generador');
 function routerApi(app){
     
     const router = express.Router();
-    app.use('/products',productsRouter);
+    app.use('/producto',produtosRouter);
     router.use('/tarea',tareasRouter);
 }
 

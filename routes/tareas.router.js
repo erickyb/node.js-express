@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const tareasRouter = require('.../services/tarea.service');
-
-
+const tareaService = require('../services/tarea.service');
 
 
 router.get('/',(req,res)=>{

@@ -2,12 +2,10 @@ const express = require('express');
 const routerApi = require('./routes/index');
 const cors = require('cors');
 const app = express();
-const generador = require('../modules/generador');
-const {longError,errorHandler}=require('./middlewares/error.handler');
-const {createTareaSchema,
-  updateTareaSchema,
-  getTareaSchema} = require('../schemas/tarea.schema');
-const validatorHandler = require('../middlewares/validator.handler');
+//const generador = require('../modules/generador');
+const {longError,errorHandler} = require('./middlewares/error.handler');
+//const {createTareaSchema, updateTareaSchema,  getTareaSchema} = require('../schemas/tarea.schema');
+const validatorHandler = require('./middlewares/validator.handler');
 
 
 const port = process.env.PORT || 3000;

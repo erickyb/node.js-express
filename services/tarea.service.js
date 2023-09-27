@@ -1,4 +1,6 @@
-const generadorDeDatos = require('./generador');
+const generadorDeDatos = require('../modules/generador');
+const express=require('express');
+const router = express.Router();
 class ProductoService{
  constructor(){
     this.productos=[];
@@ -26,7 +28,7 @@ router.get('/:id',async (req,res,next)=>{
         next(err);
     }
 });
-module.exports=ProductoService;
+module.exports={ProductoService,router}  ;
 
 
 
