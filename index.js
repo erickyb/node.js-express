@@ -11,9 +11,9 @@ const validatorHandler = require('./middlewares/validator.handler');
 
 const port = process.env.PORT || 3025;
 
-app.listen(port, ()=>{
-    console.log('Mi port'+port);
-  });
+//app.listen(port, ()=>{
+  //  console.log('Mi port'+port);
+  //});
 
 app.listen(port, ()=>{
     console.log('Mi port'+port);
