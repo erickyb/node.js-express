@@ -2,13 +2,14 @@ const express = require('express');
 const routerApi = require('./routes/index');
 const cors = require('cors');
 const app = express();
+const router = express.Router();
 //const generador = require('../modules/generador');
 const {longError,errorHandler} = require('./middlewares/error.handler');
 //const {createTareaSchema, updateTareaSchema,  getTareaSchema} = require('../schemas/tarea.schema');
 const validatorHandler = require('./middlewares/validator.handler');
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3025;
 
 app.listen(port, ()=>{
     console.log('Mi port'+port);
@@ -39,14 +40,14 @@ app.use(cors());
 routerApi(app);
 
 
-router.post('/',
-validatorHandler(createTareaSchema,'body'),
-async (req, res) => {
-  const body = req.body;
-  const Newtarea = await service.create(body);
-  res.json({
-    message: 'created',
-    data: Newtarea
-  });
-});
+//router.post('/',
+//validatorHandler(createTareaSchema,'body'),
+//async (req, res) => {
+ // const body = req.body;
+ // const Newtarea = await service.create(body);
+ // res.json({
+ //   message: 'created',
+ //   data: Newtarea
+ // });
+//  });
 

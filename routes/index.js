@@ -1,11 +1,12 @@
 const express = require('express');
 const tareasRouter = require('./tareas.router');
+const productsRouter=require('./tareas.router')
 const  generador = require('../modules/generador');
 
 function routerApi(app){
     
     const router = express.Router();
-    app.use('/producto',produtosRouter);
+    app.use('/products',productsRouter);
     router.use('/tarea',tareasRouter);
 }
 
